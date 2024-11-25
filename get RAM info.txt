@@ -1,0 +1,3 @@
+wmic memorychip list full
+
+wmic memorychip get devicelocator, memorytype, formfactor, capacity, speed

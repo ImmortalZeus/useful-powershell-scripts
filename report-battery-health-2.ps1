@@ -1,0 +1,31 @@
+$batteries = Get-WmiObject -Class Win32_Battery
+foreach ($battery in $batteries) {
+Write-Host "Battery Information:"
+Write-Host "----------------------------------"
+Write-Host "DeviceID: $($battery.DeviceID)"
+Write-Host "Name: $($battery.Name)"
+Write-Host "Manufacturer: $($battery.Manufacturer)"
+Write-Host "Status: $($battery.Status)"
+Write-Host "Battery Type: $($battery.BatteryType)"
+Write-Host "Caption: $($battery.Caption)"
+Write-Host "Chemistry: $($battery.Chemistry)"
+Write-Host "Availability: $($battery.Availability)"
+Write-Host "Battery Recharge Time: $($battery.BatteryRechargeTime) minutes"
+Write-Host "Battery Status: $($battery.BatteryStatus)"
+Write-Host "Estimated Charge Remaining: $($battery.EstimatedChargeRemaining)%"
+Write-Host "Expected Battery Life: $($battery.ExpectedBatteryLife) minutes"
+Write-Host "Expected Life: $($battery.ExpectedLife) minutes"
+Write-Host "Time On Battery: $($battery.TimeOnBattery) seconds"
+Write-Host "Time to Full Charge: $($battery.TimeToFullCharge) minutes"
+Write-Host "Design Capacity: $($battery.DesignCapacity) mWh"
+Write-Host "Full Charge Capacity: $($battery.FullChargeCapacity) mWh"
+Write-Host "Design Voltage: $($battery.DesignVoltage) mV"
+Write-Host "Smart Battery Version: $($battery.SmartBatteryVersion)"
+Write-Host "Configuration Manager Error Code: $($battery.ConfigManagerErrorCode)"
+Write-Host "Power Management Supported: $($battery.PowerManagementSupported)"
+Write-Host "Power Management Capabilities: $($battery.PowerManagementCapabilities -join ', ')"
+Write-Host ""
+}
+
+
+Read-Host -Prompt "Press Enter to exit..."
